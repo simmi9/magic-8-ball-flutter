@@ -45,14 +45,13 @@ class _BallState extends State<Ball> {
   int ballNumber = 0;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          ballNumber = Random().nextInt(5) + 1;
+    return FlatButton(
+        child: Image.asset('images/ball$ballNumber.png'),
+        onPressed: () {
+          setState(() {
+            ballNumber = Random().nextInt(5) + 1;
+          });
+          print('I am clicked');
         });
-        print('I am clicked');
-      },
-      child: Image.asset('images/ball$ballNumber.png'),
-    );
   }
 }
